@@ -1,1 +1,8 @@
-console.log("http://localhost:3000");
+const player = document.getElementById("player");
+
+player.addEventListener("keydown", handleInput);
+
+
+function handleInput(event){
+	console.log(event);
+}

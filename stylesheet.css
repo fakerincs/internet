@@ -1,5 +1,21 @@
+body{
+  background: grey; 
+}
+.center{
+  display: flex;
+  justify-content: center;
+}
 .viewwindow{
   font-family: 'Roboto Mono';
+  display: block;
   position: absolute;
-  
+  background: black;
+  width: 80%;
+  height: 60%;
+  margin: auto;
+}
+#player{
+  background-color:white;
+  width:min-content;
+  height:min-content;
 }
