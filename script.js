@@ -225,7 +225,7 @@ function checkColorAtPixel(x, y) {
     var red = pixel[0];
     var green = pixel[1];
     var blue = pixel[2];
-
+    console.log(red, green, blue);
     // Compare the color values or perform further actions
     if (red === 37 && green === 0 && blue === 4) {
         console.log("Pixel at (" + x + ", " + y + ") is white.");
