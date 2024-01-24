@@ -1,21 +1,13 @@
 body{
-  background: grey; 
+  background: rgb(45, 45, 45); 
 }
-.center{
-  display: flex;
-  justify-content: center;
-}
-.viewwindow{
-  font-family: 'Roboto Mono';
-  display: block;
-  position: absolute;
-  background: black;
-  width: 80%;
-  height: 60%;
+canvas {
+  border:1px solid black;
+
   margin: auto;
-}
-#player{
-  background-color:white;
-  width:min-content;
-  height:min-content;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
 }
