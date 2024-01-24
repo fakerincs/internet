@@ -233,16 +233,24 @@ function checkColorAtPixel(x, y) {
         console.log("Pixel at (" + x + ", " + y + ") is not white.");
     }
 }
-
+let alerted = false;
 function updateCanvas(timeStamp) {
     if (health < 0){
-        alert('you lost');
-        location.reload();
+        if (!alerted){
+            alert('you lost');
+            location.reload();
+            alerted = true;
+        }
+        
+        
     }
     if (ix < -3056 && ix > -3476){
         if (iy <-140){
-            alert("you won!");
-            console.log("win");
+            if (!alerted){
+                alert("you won!");
+                console.log("win");
+                alerted = true;
+            }
         }
     }
     if (health > 100){
