@@ -163,7 +163,7 @@ function drawObjects() {
         if (obj.opacity == 1) {
             ctx.fillStyle = "red";
         } else {
-            ctx.fillStyle = "blue";
+            ctx.fillStyle = "black";
         }
         ctx.globalAlpha = obj.opacity;
         ctx.fillRect(obj.x, obj.y, obj.width, obj.height);
@@ -228,7 +228,6 @@ function checkColorAtPixel(x, y) {
     console.log(red, green, blue);
     // Compare the color values or perform further actions
     if (red === 37 && green === 0 && blue === 4) {
-        console.log("Pixel at (" + x + ", " + y + ") is white.");
         return true;
     } else {
         // console.log("Pixel at (" + x + ", " + y + ") is not white.");
@@ -277,7 +276,7 @@ function updateCanvas(timeStamp) {
     drawObjects(); // Draw the objects
     // Generate random objects with a chance of 5% to appear in each frame
     if (oncolor){
-        if (Math.random() < 0.05 + (0.1 * (2572 + iy)/1000)) {
+        if (Math.random() < 0.2 + (0.1 * (2572 + iy)/1000)) {
             for (let i = 0; i < Math.floor(Math.random() * (20 + ((2572 + iy)/500) )); i++) {
                 objects.push(createRandomObject());
             }
