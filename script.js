@@ -247,7 +247,7 @@ function updateCanvas(timeStamp) {
         
     }
     if (ix < -3056 && ix > -3476){
-        if (iy <-140){
+        if (iy >-140){
             if (!alerted){
                 alert("you won!");
                 console.log("win");
