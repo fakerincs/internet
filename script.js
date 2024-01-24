@@ -67,27 +67,27 @@ function handleKeyUp(event) {
 function updatePlayerPosition() {
     if (keys.W) {
         for (let obj of objects) {
-            obj.y += 4;
+            obj.y += 3;
         }
-        iy +=4;
+        iy +=3;
     }
     if (keys.A) {
         for (let obj of objects) {
-            obj.x += 4;
+            obj.x += 3;
         }
-        ix +=4;
+        ix +=3;
     }
     if (keys.S) {
         for (let obj of objects) {
-            obj.y -= 4;
+            obj.y -= 3;
         }
-        iy -=4;
+        iy -=3;
     }
     if (keys.D) {
         for (let obj of objects) {
-            obj.x -= 4;
+            obj.x -= 3;
         }
-        ix-=4;
+        ix-=3;
     }
     player.stopPlayer();
 }
@@ -283,8 +283,8 @@ function updateCanvas(timeStamp) {
     
         }
     }
-    if (Math.random() < 0.03 + (0.1 * (2572 + iy)/500)) {
-        for (let i = 0; i < Math.floor(Math.random() * (20 + ((2572 + iy)/400) )); i++) {
+    if (Math.random() < 0.03 + (0.1 * (2572 + iy)/600)) {
+        for (let i = 0; i < Math.floor(Math.random() * (20 + ((2572 + iy)/500) )); i++) {
             objects.push(createRandomObject());
         }
 
