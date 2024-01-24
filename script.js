@@ -98,8 +98,8 @@ function startGame() {
 }
 
 function createRandomObject() {
-    var xPos = randomNumber(-300, canvasWidth + 300);
-    var yPos = randomNumber(-300, canvasWidth + 300);
+    var xPos = randomNumber(-500, canvasWidth + 500);
+    var yPos = randomNumber(-500, canvasWidth + 500);
     if (Math.random() < 0.08) {
         var dx = randomNumber(-50, 50) / 70;
         var dy = randomNumber(-50, 50) / 70;
@@ -131,7 +131,7 @@ function updateObjects() {
         obj.y += obj.dy;
         obj.x += obj.dx;
 
-        if (obj.y + obj.height < -100 || obj.y + 10 > canvasHeight + 100 || obj.x + obj.width < -100) {
+        if (obj.y + obj.height < -500 || obj.y + 10 > canvasHeight + 500 || obj.x + obj.width < -500) {
             objects.splice(objects.indexOf(obj), 1);
         }
         var elapsedTime = performance.now() - obj.startTime;
@@ -276,15 +276,15 @@ function updateCanvas(timeStamp) {
     drawObjects(); // Draw the objects
     // Generate random objects with a chance of 5% to appear in each frame
     if (oncolor){
-        if (Math.random() < 0.2 + (0.1 * (2572 + iy)/1000)) {
+        if (Math.random() < 0.4 + (0.2 * (2572 + iy)/300)) {
             for (let i = 0; i < Math.floor(Math.random() * (20 + ((2572 + iy)/500) )); i++) {
                 objects.push(createRandomObject());
             }
     
         }
     }
-    if (Math.random() < 0.05 + (0.1 * (2572 + iy)/1000)) {
-        for (let i = 0; i < Math.floor(Math.random() * (20 + ((2572 + iy)/500) )); i++) {
+    if (Math.random() < 0.05 + (0.1 * (2572 + iy)/500)) {
+        for (let i = 0; i < Math.floor(Math.random() * (20 + ((2572 + iy)/400) )); i++) {
             objects.push(createRandomObject());
         }
 
