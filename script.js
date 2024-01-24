@@ -229,11 +229,14 @@ function checkColorAtPixel(x, y) {
     // Compare the color values or perform further actions
     if (red === 37 && green === 0 && blue === 4) {
         console.log("Pixel at (" + x + ", " + y + ") is white.");
+        return true;
     } else {
-        console.log("Pixel at (" + x + ", " + y + ") is not white.");
+        // console.log("Pixel at (" + x + ", " + y + ") is not white.");
+        return false;
     }
 }
 let alerted = false;
+let oncolor = false;
 function updateCanvas(timeStamp) {
     if (health < 0){
         if (!alerted){
@@ -262,12 +265,18 @@ function updateCanvas(timeStamp) {
     ctx = gameCanvas.context;
     ctx.clearRect(0, 0, canvasWidth, canvasHeight);
     ctx.drawImage(backgroundImage, ix, iy, backgroundImage.width * 4, backgroundImage.height * 4);
+    if (checkColorAtPixel(player.x, player.y)){
+        oncolor = true;
+    }
+    else{
+        oncolor = false;
+    }
     player.draw();
     updatePlayerPosition();
     updateObjects(); // Update positions and check collisions with objects
     drawObjects(); // Draw the objects
     // Generate random objects with a chance of 5% to appear in each frame
-    if (checkColorAtPixel(player.x, player.y)){
+    if (oncolor){
         if (Math.random() < 0.05 + (0.1 * (2572 + iy)/1000)) {
             for (let i = 0; i < Math.floor(Math.random() * (20 + ((2572 + iy)/500) )); i++) {
                 objects.push(createRandomObject());
