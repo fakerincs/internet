@@ -107,8 +107,8 @@ function createRandomObject() {
         var dx = 0;
         var dy = 0;
     }
-    var width = randomNumber(15, 60);
-    var height = randomNumber(15, 60);
+    var width = randomNumber(15, 80);
+    var height = randomNumber(15, 80);
     var opacity = 0.2; // Initial opacity
     var appearTime = randomNumber(500, 2000); // Random time to appear (milliseconds)
 
@@ -138,7 +138,7 @@ function updateObjects() {
         if (elapsedTime < obj.appearTime) {
             obj.opacity = 0.2 + (elapsedTime / obj.appearTime) * 0.8;
         } else {
-            if (elapsedTime > obj.appearTime + (3000 * (obj.dx + obj.dy)) + (obj.appearTime / 5)) {
+            if (elapsedTime > obj.appearTime + (3000 * (obj.dx + obj.dy)) + (obj.appearTime / 4) + 150) {
                 objects.splice(objects.indexOf(obj), 1);
             }
             obj.opacity = 1;
