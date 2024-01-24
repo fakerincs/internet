@@ -283,7 +283,7 @@ function updateCanvas(timeStamp) {
     
         }
     }
-    if (Math.random() < 0.05 + (0.1 * (2572 + iy)/500)) {
+    if (Math.random() < 0.03 + (0.1 * (2572 + iy)/500)) {
         for (let i = 0; i < Math.floor(Math.random() * (20 + ((2572 + iy)/400) )); i++) {
             objects.push(createRandomObject());
         }
